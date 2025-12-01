@@ -91,7 +91,8 @@ public class WebhookRunnerService implements ApplicationRunner {
     }
 
     private int extractDigits(String regNo) {
-        String digits = regNo.replaceAll("\D", "");
+        String digits = regNo.replaceAll("\\D", "");
+
         if (digits.length() < 2) return 0;
         return Integer.parseInt(digits.substring(digits.length() - 2));
     }
